@@ -1,0 +1,39 @@
+.label {
+  @apply text-zinc-100 text-sm tracking-wide;
+}
+
+.button {
+  @apply tracking-wide bg-zinc-600 outline-0 rounded-full px-4 py-1 transition-all duration-200 focus:ring focus:ring-purple-300 focus:ring-opacity-50 hover:bg-zinc-700 active:bg-zinc-800;
+}
+
+.baseControl {
+  @apply w-full rounded-2xl outline-0 py-2 mt-2 tracking-wide text-zinc-900 transition-all duration-200 focus:ring focus:ring-purple-500 focus:ring-opacity-50;
+}
+
+.inputControl {
+  @apply px-3;
+}
+
+.selectControl {
+  @apply px-2;
+}
+
+.textareaControl {
+  @apply px-3 align-top;
+}
+
+.invalidMessage {
+  @apply hidden relative bg-zinc-800 rounded-lg w-full py-2 px-3 mt-3 before:absolute before:bottom-full before:left-16 before:transform before:-translate-x-1/2 before:w-0 before:h-0 before:border-l-8 before:border-l-transparent before:border-r-8 before:border-r-transparent before:border-b-8 before:border-b-zinc-800;
+}
+
+.wasValidated .isValid {
+  @apply bg-green-100;
+}
+
+.wasValidated .isInvalid {
+  @apply bg-red-100;
+}
+
+.wasValidated .warning {
+  @apply block;
+}
