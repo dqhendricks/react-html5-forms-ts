@@ -14,9 +14,7 @@ export default function Input({
   return (
     <>
       <input
-        className={`${styles.baseControl} ${styles.inputControl} ${className} ${
-          isValid ? styles.isValid : styles.isInvalid
-        }`}
+        className={`${styles.baseControl} ${styles.inputControl} ${className}`}
         onChange={handleChange}
         ref={controlRef}
         {...attributes}
