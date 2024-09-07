@@ -17,7 +17,7 @@ export default function Textarea({
       <textarea
         className={`${styles.baseControl} ${
           styles.textareaControl
-        } ${className} ${isValid ? styles.isValid : styles.isInvalid}`}
+        } ${className}`}
         onChange={handleChange}
         ref={controlRef}
         {...attributes}
