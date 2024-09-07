@@ -8,7 +8,7 @@ export default function Input({
   onChange,
   ...attributes
 }: React.InputHTMLAttributes<HTMLInputElement>) {
-  const { isValid, validationMessage, controlRef, handleChange } =
+  const { validationMessage, controlRef, handleChange } =
     useControlValidation(onChange);
 
   return (
@@ -20,7 +20,7 @@ export default function Input({
         {...attributes}
       />
       <p
-        className={`${styles.invalidMessage} ${isValid ? "" : styles.warning}`}
+        className={styles.invalidMessage}
       >
         {validationMessage}
       </p>
