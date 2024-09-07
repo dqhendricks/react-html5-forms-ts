@@ -9,7 +9,7 @@ export default function Select({
   onChange,
   ...attributes
 }: React.SelectHTMLAttributes<HTMLSelectElement>) {
-  const { isValid, validationMessage, controlRef, handleChange } =
+  const { validationMessage, controlRef, handleChange } =
     useControlValidation(onChange);
 
   return (
@@ -25,7 +25,7 @@ export default function Select({
         {children}
       </select>
       <p
-        className={`${styles.invalidMessage} ${isValid ? "" : styles.warning}`}
+        className={`${styles.invalidMessage}`}
       >
         {validationMessage}
       </p>
