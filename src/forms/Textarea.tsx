@@ -25,7 +25,7 @@ export default function Textarea({
         {children}
       </textarea>
       <p
-        className={`${styles.invalidMessage}`}
+        className={styles.invalidMessage}
       >
         {validationMessage}
       </p>
