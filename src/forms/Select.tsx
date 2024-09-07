@@ -17,7 +17,7 @@ export default function Select({
       <select
         className={`${styles.baseControl} ${
           styles.selectControl
-        } ${className} ${isValid ? styles.isValid : styles.isInvalid}`}
+        } ${className}`}
         onChange={handleChange}
         ref={controlRef}
         {...attributes}
