@@ -25,7 +25,7 @@ export default function Select({
         {children}
       </select>
       <p
-        className={`${styles.invalidMessage}`}
+        className={styles.invalidMessage}
       >
         {validationMessage}
       </p>
