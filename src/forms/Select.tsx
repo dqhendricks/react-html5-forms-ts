@@ -9,26 +9,19 @@ export default function Select({
   onChange,
   ...attributes
 }: React.SelectHTMLAttributes<HTMLSelectElement>) {
-  const { validationMessage, controlRef, handleChange } =
+  const { validationMessage, validationClasses, ...controlProps } =
     useControlValidation(onChange);
 
   return (
     <>
       <select
-        className={`${styles.baseControl} ${
-          styles.selectControl
-        } ${className}`}
-        onChange={handleChange}
-        ref={controlRef}
+        className={`${styles.baseControl} ${styles.selectControl} ${className} ${validationClasses}`}
         {...attributes}
+        {...controlProps}
       >
         {children}
       </select>
-      <p
-        className={styles.invalidMessage}
-      >
-        {validationMessage}
-      </p>
+      <p className={styles.invalidMessage}>{validationMessage}</p>
     </>
   );
 }
