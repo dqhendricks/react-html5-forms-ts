@@ -3,15 +3,15 @@ This set of react components provide a simple way to use HTML5 form validation a
 
 For a working example, view the code sandbox [here](https://codesandbox.io/p/devbox/react-html5-forms-ts-h9m5dx), or see below.
 
-*Notes: For more advanced applications I would recommend something along the lines of Zod/HookForms for validation checking, but occasionally you just need a simple lightweight HTML5 validation check that lets you send your FormData object on success (but prettier than the browser default). I'm using tailwindcss in the example code CSS module for easy styling here, but it is not in any way required for use with this set of components.*
+*Notes: For more advanced applications I would recommend something along the lines of Zod/HookForms for validation checking, but occasionally you just need a simple lightweight HTML5 validation check that lets you send your FormData object on success (but with onBlur validation and prettier than the browser default). I'm using tailwindcss in the example code CSS module for easy styling here, but it is not in any way required for use with this set of components.*
 
 **Features**
 
 * Default styling (focus, hover, invalid, valid) encapsulated within CSS module file
-* Automatic validation checking on submit using HTML5 validation rules
-* Will still call any custom set onSubmit handlers if validation passes
-* Automatic valid/invalid styling of fields after initial submit if the form is invalid
-* Automatic invalid messages shown after initial submit if the form is invalid
+* Automatic validation checking during onSubmit and onChange using HTML5 validation rules
+* Automatic valid/invalid styling of fields after initial submit or touch if the field is invalid
+* Automatic invalid messages shown after initial submit or touch if the field is invalid
+* Will still call any custom set onSubmit handlers if validation passes, allowing you to use browser or fetch form submissions
 * Components serve as drop in replacements for equivolent HTML elements
 
 **Example usage:**
