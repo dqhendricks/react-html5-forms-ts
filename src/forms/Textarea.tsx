@@ -9,7 +9,7 @@ export default function Textarea({
   onChange,
   ...attributes
 }: React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
-  const { validationMessage, controlRef, handleChange } =
+  const { validationMessage, validationClasses, ...controlProps } =
     useControlValidation(onChange);
 
   return (
@@ -17,18 +17,13 @@ export default function Textarea({
       <textarea
         className={`${styles.baseControl} ${
           styles.textareaControl
-        } ${className}`}
-        onChange={handleChange}
-        ref={controlRef}
+        } ${className} ${validationClasses}`}
         {...attributes}
+        {...controlProps}
       >
         {children}
       </textarea>
-      <p
-        className={styles.invalidMessage}
-      >
-        {validationMessage}
-      </p>
+      <p className={styles.invalidMessage}>{validationMessage}</p>
     </>
   );
 }
