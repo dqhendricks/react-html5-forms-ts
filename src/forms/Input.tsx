@@ -8,22 +8,17 @@ export default function Input({
   onChange,
   ...attributes
 }: React.InputHTMLAttributes<HTMLInputElement>) {
-  const { validationMessage, controlRef, handleChange } =
+  const { validationMessage, validationClasses, ...controlProps } =
     useControlValidation(onChange);
 
   return (
     <>
       <input
-        className={`${styles.baseControl} ${styles.inputControl} ${className}`}
-        onChange={handleChange}
-        ref={controlRef}
+        className={`${styles.baseControl} ${styles.inputControl} ${className} ${validationClasses}`}
         {...attributes}
+        {...controlProps}
       />
-      <p
-        className={styles.invalidMessage}
-      >
-        {validationMessage}
-      </p>
+      <p className={styles.invalidMessage}>{validationMessage}</p>
     </>
   );
 }
