@@ -25,7 +25,10 @@ export function useControlValidation<
     const { relatedTarget } = event;
     if (relatedTarget && relatedTarget.tagName === "BUTTON") {
       const relatedTargetType = relatedTarget.getAttribute("type");
-      if (relatedTargetType === "submit" || relatedTargetType === null) {
+      const form = relatedTarget.closest("form");
+      const buttonWillSubmit =
+        form && (relatedTargetType === "submit" || relatedTargetType === null);
+      if (buttonWillSubmit) {
         return;
       }
     }
