@@ -6,11 +6,10 @@ import styles from "./Form.module.css";
 export default function Select({
   children,
   className = "",
-  onChange,
   ...attributes
 }: React.SelectHTMLAttributes<HTMLSelectElement>) {
   const { validationMessage, validationClasses, ...controlProps } =
-    useControlValidation(onChange);
+    useControlValidation(attributes);
 
   return (
     <>

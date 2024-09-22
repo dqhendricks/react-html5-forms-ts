@@ -6,18 +6,15 @@ import styles from "./Form.module.css";
 export default function Textarea({
   children,
   className = "",
-  onChange,
   ...attributes
 }: React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
   const { validationMessage, validationClasses, ...controlProps } =
-    useControlValidation(onChange);
+    useControlValidation(attributes);
 
   return (
     <>
       <textarea
-        className={`${styles.baseControl} ${
-          styles.textareaControl
-        } ${className} ${validationClasses}`}
+        className={`${styles.baseControl} ${styles.textareaControl} ${className} ${validationClasses}`}
         {...attributes}
         {...controlProps}
       >

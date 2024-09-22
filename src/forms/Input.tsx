@@ -5,11 +5,10 @@ import styles from "./Form.module.css";
 
 export default function Input({
   className = "",
-  onChange,
   ...attributes
 }: React.InputHTMLAttributes<HTMLInputElement>) {
   const { validationMessage, validationClasses, ...controlProps } =
-    useControlValidation(onChange);
+    useControlValidation(attributes);
 
   return (
     <>
